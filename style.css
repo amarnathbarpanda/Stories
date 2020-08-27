@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Comic+Neue&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+}
+section{
+    padding: 50px;
+    width: 100%;
+    background: #000;
+}
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 2px solid green; */
+}
+.image{
+    width: 47%;
+    /* border: 2px solid yellow; */
+}
+.image img{
+    height: 100%;
+    width: 100%;
+    /* margin: 2em; */
+}
+section h2{
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: 'Comic Neue', cursive;   
+}
+.text{
+    width: 47%;
+    /* border:2px solid #008aff; */
+}
+.text p{
+    font-size: 1.5em;
+    color: #fff;
+    margin: 1em 1em 1em 1em;
+    /* width: 45vw; */
+    text-align: justify;
+    font-family: 'Butterfly Kids', cursive;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.text b{
+    color: #fff;
+    font-size: 20px;
+    /* margin-top: 2em; */
+    font-family: 'Comic Neue', cursive;
+
+}
+.text blockquote{
+    color: #fff;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-family: 'Butterfly Kids', cursive;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+#progressbar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(10px);
+}
+#progressbar::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(30px);
+}
+
+/* Media queries */
+
+/* Desktop and laptop */
+
+@media (min-width: 1024px){
+    .text p{
+        color: #caa8f1;
+        word-spacing: 10px;
+        line-height: 30px;
+    }
+    section h2{
+        color: yellow;
+        text-transform: uppercase;
+    }
+    .text b{
+        color: red;
+    }
+    .text blockquote{
+        color: greenyellow;
+    }
+    .image{
+        height: 60vh;
+    }
+}
+/* Tablet and iPad */
+
+@media (min-width: 769px) and (max-width: 1023px){
+    section .content{
+        display: block;
+    }
+    section h2{
+        color: orange;
+    }
+    .text{
+        width: 100%;
+        
+    }
+    .text p{
+        color: rgb(157, 190, 252);
+    }
+    .text b{
+        color: red;
+    }
+    .text blockquote{
+        color: greenyellow;
+    }
+    .image{
+        width: 100%;
+    }
+    .image img{
+        width: 100%;
+        height: auto;
+    }
+}
+/* Mobile phones */
+
+@media (max-width:768px){
+    section h2 {
+        color: greenyellow;
+        text-transform: uppercase;
+    }
+    section .content{
+        display: block;
+    }
+    .text{
+        width: 100%;
+    }
+    .text p{
+        color: rgb(161, 235, 253);
+    }
+    .image{
+        width: 100%;
+    }
+    .image img{
+        width: 100%;
+        height: auto;
+    }
+    .text b{
+        color: red;
+    }
+    .text blockquote{
+        color: greenyellow;
+    }
+}
+@media (max-width:468px){
+    .image img{
+        padding: 5%;
+        box-sizing: border-box;
+    }
+}
